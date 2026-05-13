@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.env
+venv/
+.venv/
+mlruns/
+mlartifacts/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# Editor
+.DS_Store
+*.swp

@@ -6,6 +6,7 @@ import { AgentsPage } from "./pages/AgentsPage";
 import { AgentDetailPage } from "./pages/AgentDetailPage";
 import { RunsPage } from "./pages/RunsPage";
 import { RunDetailPage } from "./pages/RunDetailPage";
+import { WorkforcePage } from "./pages/WorkforcePage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -25,6 +26,7 @@ export default function App() {
             <Route path="/" element={<DashboardPage />} />
             <Route path="/agents" element={<AgentsPage />} />
             <Route path="/agents/:name" element={<AgentDetailPage />} />
+            <Route path="/workforce" element={<WorkforcePage />} />
             <Route path="/runs" element={<RunsPage />} />
             <Route path="/runs/:runId" element={<RunDetailPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />

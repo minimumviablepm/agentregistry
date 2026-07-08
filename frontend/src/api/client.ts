@@ -8,6 +8,7 @@ import type {
   ModelVersion,
   Run,
   RunDetail,
+  WorkforceAgent,
 } from "../types";
 
 const BASE = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
@@ -78,3 +79,6 @@ export const fetchMetricHistory = (runId: string, metricKey: string) =>
 
 export const fetchArtifacts = (runId: string, path = "") =>
   request<Artifact[]>(`/api/runs/${runId}/artifacts?path=${encodeURIComponent(path)}`);
+
+// Workforce
+export const fetchWorkforce = () => request<WorkforceAgent[]>("/api/workforce");

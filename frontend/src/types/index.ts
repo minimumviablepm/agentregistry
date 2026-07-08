@@ -66,3 +66,27 @@ export interface HealthStatus {
   connected: boolean;
   error?: string;
 }
+
+export type ActivityStatus = "running" | "failed" | "idle" | "no_data";
+
+export interface AgentRunStats {
+  total: number;
+  running_count: number;
+  success_rate: number | null;
+  avg_duration_ms: number | null;
+  last_run_id: string | null;
+  last_run_status: string | null;
+  last_run_time: number | null;
+  last_run_duration_ms: number | null;
+}
+
+export interface WorkforceAgent {
+  name: string;
+  description: string | null;
+  primary_stage: string;
+  total_versions: number;
+  activity_status: ActivityStatus;
+  run_stats: AgentRunStats;
+  tags: Record<string, string>;
+  last_updated_timestamp: number;
+}
